@@ -17,10 +17,10 @@ You must not mutate the original array.
 
 object MultiplyAll extends App {
 
-  def multiplyAll(numbers: Seq[Int]): Int => Seq[Int] = {
-    (num: Int) => (numbers.map(y => y  * num))
+  def multiplyAll(numbers: Seq[Int])(x: Int): Seq[Int] = {
+   numbers.map(num => num * x)
   }
 
-  val numbers = Seq(1,2,3)
-  println(multiplyAll(numbers)(2))
+  println(multiplyAll(Seq(1,2,3))(2))
+  println(multiplyAll(Seq(5,6,7))(4))
 }
